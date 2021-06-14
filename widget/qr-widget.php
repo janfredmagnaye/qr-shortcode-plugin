@@ -77,11 +77,11 @@ class qrs_widget extends WP_Widget {
                 <input id="<?php echo $this->get_field_id( 'size' ); ?>" name="<?php echo $this->get_field_name( 'size' ); ?>" type="number" value="<?php echo esc_attr( $size ); ?>" />
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'color' ); ?>"><?php _e( 'Color:' ); ?></label> 
+                <label for="<?php echo $this->get_field_id( 'color' ); ?>"><?php _e( 'Color (in Hex values):' ); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'color' ); ?>" name="<?php echo $this->get_field_name( 'color' ); ?>" type="text" value="<?php echo esc_attr( $color ); ?>" placeholder="000000" />
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'bgcolor' ); ?>"><?php _e( 'Background Color:' ); ?></label> 
+                <label for="<?php echo $this->get_field_id( 'bgcolor' ); ?>"><?php _e( 'Background Color: (in Hex values)' ); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'color' ); ?>" name="<?php echo $this->get_field_name( 'bgcolor' ); ?>" type="text" value="<?php echo esc_attr( $bgcolor ); ?>" placeholder="ffffff" />
             </p>
         <?php 
