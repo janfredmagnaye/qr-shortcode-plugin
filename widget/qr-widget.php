@@ -32,9 +32,9 @@ class qrs_widget extends WP_Widget {
         echo $args['before_title'] . $title . $args['after_title'];
           
         // This is where you run the code and display the output
-        echo __( '<a href="'.$url.'" Title="'.$title.'" target="_blank" />', 'qrs_widget_domain' );
-        echo __( '<img src="//api.qrserver.com/v1/create-qr-code/?data='.$url.'&amp;size='.$size.'x'.$size.'&amp;color='.$color.'&amp;bgcolor='.$bgcolor.'" alt="'.$title.'" />', 'qrs_widget_domain' );
-        echo __( '<a/>', 'qrs_widget_domain' );
+        echo __( '<a href="'.$url.'" Title="'.$title.'" target="_blank">', 'qrs_widget_domain' );
+        echo __( '<img src="//api.qrserver.com/v1/create-qr-code/?data='.$url.'&amp;size='.$size.'x'.$size.'&amp;color='.$color.'&amp;bgcolor='.$bgcolor.'" alt="'.$title.'" height="'.$size.'" width="'.$size.'" />', 'qrs_widget_domain' );
+        echo __( '</a>', 'qrs_widget_domain' );
         echo $args['after_widget'];
     }
               
@@ -56,11 +56,11 @@ class qrs_widget extends WP_Widget {
             $bgcolor = $instance[ 'bgcolor' ];
         }
         else {
-        $title = __( 'New title', 'qrs_widget_domain' );
-        $url = __( 'https://bit.ly/3voiMUy', 'qrs_widget_domain' );
-        $size = __( '200', 'qrs_widget_domain' );
-        $color = __( '000000', 'qrs_widget_domain' );
-        $bgcolor = __( 'ffffff', 'qrs_widget_domain' );
+            $title = __( 'New title', 'qrs_widget_domain' );
+            $url = __( 'https://bit.ly/3voiMUy', 'qrs_widget_domain' );
+            $size = __( '200', 'qrs_widget_domain' );
+            $color = __( '000000', 'qrs_widget_domain' );
+            $bgcolor = __( 'ffffff', 'qrs_widget_domain' );
         }
             // Widget admin form
         ?>
@@ -99,9 +99,9 @@ class qrs_widget extends WP_Widget {
     }
      
     // Class qrs_widget ends here
-    } 
-
-    function qrs_load_widget() {
-        register_widget( 'qrs_widget' );
-    }
-    add_action( 'widgets_init', 'qrs_load_widget' );
+} 
+// Register Widget
+function qrs_load_widget() {
+    register_widget( 'qrs_widget' );
+}
+add_action( 'widgets_init', 'qrs_load_widget' );

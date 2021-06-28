@@ -3,7 +3,7 @@
  * Plugin Name: QR Shortcode 
  * Plugin URI: https://www.primeview.com/
  * Description: Adds a QR Code to your site using a shortcode
- * Version: 1.0
+ * Version: 1.0.1
  * Author: PV DEV
  * Author URI: https://www.primeview.com/
  */
@@ -31,13 +31,13 @@ function qr_generateQRCode($atts, $content = null){
     ), $atts));
 
     if(empty($url)){
-        $return_string = '<img src="//api.qrserver.com/v1/create-qr-code/?data='.do_shortcode($content).'&size='.$size.'x'.$size.'&color='.$color.'&bgcolor='.$bgcolor.'" alt="'.$alt.'" title="'.$title.'" />';
+        $return_string = '<img src="//api.qrserver.com/v1/create-qr-code/?data='.do_shortcode($content).'&size='.$size.'x'.$size.'&color='.$color.'&bgcolor='.$bgcolor.'" alt="'.$alt.'" title="'.$title.'" height="'.$size.'" width="'.$size.'" />';
     } 
     else {
         if($target == 'none'){
-            $return_string = '<a href="'.$url.'" ><img src="//api.qrserver.com/v1/create-qr-code/?data='.do_shortcode($content).'&size='.$size.'x'.$size.'&color='.$color.'&bgcolor='.$bgcolor.'" alt="'.$alt.'" title="'.$title.'" /></a>';
+            $return_string = '<a href="'.$url.'" ><img src="//api.qrserver.com/v1/create-qr-code/?data='.do_shortcode($content).'&size='.$size.'x'.$size.'&color='.$color.'&bgcolor='.$bgcolor.'" alt="'.$alt.'" title="'.$title.'" height="'.$size.'" width="'.$size.'" /></a>';
         } else {
-            $return_string = '<a href="'.$url.'" target="'.$target.'"><img src="//api.qrserver.com/v1/create-qr-code/?data='.do_shortcode($content).'&size='.$size.'x'.$size.'&color='.$color.'&bgcolor='.$bgcolor.'" alt="'.$alt.'" title="'.$title.'" /></a>';
+            $return_string = '<a href="'.$url.'" target="'.$target.'"><img src="//api.qrserver.com/v1/create-qr-code/?data='.do_shortcode($content).'&size='.$size.'x'.$size.'&color='.$color.'&bgcolor='.$bgcolor.'" alt="'.$alt.'" title="'.$title.'" height="'.$size.'" width="'.$size.'" /></a>';
         }
     }
     
